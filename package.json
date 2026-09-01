@@ -1,7 +1,7 @@
 {
-  "name": "chat-app-enterprise-suite",
-  "version": "3.0.0",
-  "description": "Cross-platform enterprise messaging platform optimized for mobile touch targets, responsive desktop grids, and zero-dependency performance.",
+  "name": "chat-app-v2-direct-messenger",
+  "version": "2.0.0",
+  "description": "Executive Spectrum v2 - End-to-end direct messaging platform with multi-conversation threading and zero presence telemetry.",
   "main": "cluster.js",
   "scripts": {
     "start": "node cluster.js",
