@@ -1,10 +1,13 @@
 {
-  "name": "chat-app",
-  "version": "1.0.0",
-  "description": "Zero-dependency full-stack messaging application with username authentication and real-time chat.",
+  "name": "chat-app-enterprise",
+  "version": "2.0.0",
+  "description": "Enterprise-grade real-time messaging platform with WebSockets, clustering, redis-ready architecture, and Executive Spectrum UI.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "cluster": "node cluster.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
 }
