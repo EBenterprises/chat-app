@@ -120,7 +120,8 @@ function getCrossPlatformUI() {
             --border-gold: rgba(212, 175, 55, 0.2);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
-        body { background: var(--bg-obsidian); color: var(--text-primary); height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+        body { background: var(--bg-obsidian); color: var(--text-primary); height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; align-items: center; }
+        .app-wrapper { width: 100%; max-width: 1400px; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 0 50px rgba(0,0,0,0.8); border-left: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); }
         
         header { background: var(--surface-dark); border-bottom: 1px solid var(--border-subtle); padding: 0.75rem 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 20; }
         .brand { display: flex; align-items: center; gap: 0.5rem; }
@@ -177,6 +178,7 @@ function getCrossPlatformUI() {
     </style>
 </head>
 <body>
+    <div class="app-wrapper">
     <div id="login-overlay">
         <div class="login-card">
             <h2>Executive Terminal</h2>
@@ -325,6 +327,7 @@ function getCrossPlatformUI() {
             );
         }
     </script>
+    </div>
 </body>
 </html>`;
 }
