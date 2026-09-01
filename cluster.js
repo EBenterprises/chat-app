@@ -4,16 +4,24 @@ const os = require('os');
 
 if (cluster.isPrimary) {
     const numCPUs = os.cpus().length;
-    console.log(`[Master] Primary process ${process.pid} is booting up...`);
-    console.log(`[Master] Forking workers across ${numCPUs} CPU cores for top-grossing scale performance.`);
+    console.log(`[Enterprise Master] Initializing Primary Controller (${process.pid})`);
+    console.log(`[Enterprise Master] Allocating worker pool across ${numCPUs} physical CPU cores.`);
 
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
 
     cluster.on('exit', (worker, code, signal) => {
-        console.log(`[Master] Worker ${worker.process.pid} died. Spin up replacement...`);
+        console.warn(`[Enterprise Master] Worker node ${worker.process.pid} exited. Provisioning hot replacement...`);
         cluster.fork();
+    });
+
+    process.on('SIGTERM', () => {
+        console.log('[Enterprise Master] Terminating worker pool gracefully...');
+        for (const id in cluster.workers) {
+            cluster.workers[id].send('shutdown');
+        }
+        setTimeout(() => process.exit(0), 5000);
     });
 } else {
     require('./server.js');
