@@ -1,0 +1,10 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Zero-dependency full-stack messaging application with username authentication and real-time chat.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
