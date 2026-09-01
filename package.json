@@ -1,7 +1,7 @@
 {
   "name": "chat-app-enterprise-suite",
-  "version": "2.5.0",
-  "description": "Enterprise-grade real-time messaging platform with horizontal clustering, WebSocket rooms, telemetry dashboards, and zero-dependency resilience.",
+  "version": "3.0.0",
+  "description": "Cross-platform enterprise messaging platform optimized for mobile touch targets, responsive desktop grids, and zero-dependency performance.",
   "main": "cluster.js",
   "scripts": {
     "start": "node cluster.js",
