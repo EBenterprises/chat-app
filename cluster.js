@@ -3,7 +3,7 @@ const http = require('http');
 const os = require('os');
 
 if (cluster.isPrimary) {
-    const numCPUs = os.cpus().length;
+    const numCPUs = Math.max(os.cpus().length, 1);
     console.log(`[Enterprise Master] Initializing Primary Controller (${process.pid})`);
     console.log(`[Enterprise Master] Allocating worker pool across ${numCPUs} physical CPU cores.`);
 
